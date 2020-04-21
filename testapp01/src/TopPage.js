@@ -37,8 +37,14 @@ useEffect(()=>{
 const showList = useCallback(() =>{
   const list = [];
   if (postState.length > 0) {
-    console.log(postState);
-    postState.forEach((doc)=>{
+    const values = [];
+    const newList = postState.filter(e => {
+        if (values.indexOf(e["id"]) === -1) {
+          values.push(e["id"]);
+          return e;
+        }
+    });
+    newList.forEach((doc)=>{
       doc.list.forEach((doc) =>{
         list.push(<tr onClick={()=>history.push('/jsonData',doc)}>
           <td>{doc.title}</td>
