@@ -53,6 +53,7 @@ const showList = useCallback(() =>{
           <td>{doc.author}</td>
         </tr>)
       })
+      list.push(<tr><h1 style={{textAlign:'center'}}>page: {doc.id}</h1></tr>)
     })
   } 
   return list
@@ -74,7 +75,6 @@ const handleScroll= useCallback(async()=>{
   return (
     <div className="App">
       <h1>JsonPostList</h1>
-      <p>{count}</p>
       <table>
         <tr><td>title</td><td>Url</td><td>created_at</td><td>author</td></tr>
           {showList()}
