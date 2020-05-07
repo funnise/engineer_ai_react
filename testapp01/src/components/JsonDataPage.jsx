@@ -1,12 +1,9 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React from 'react';
 import useRouter from "use-react-router";
 
 export const JsonDataPage =() =>{
-　const [rowdata, setRowdata] = useState();
   const { history } = useRouter();
-  const jsonData = JSON.stringify(history.location.state)
-  console.log(jsonData)
-
+  const jsonData = JSON.stringify(history.location.state);
   return (
     <div>
         <h1>JsonRowData</h1>
